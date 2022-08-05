@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    /* выставляет положение блоков на странице */
+    grid-template-areas:
+        "hd hd hd"
+        "nv nv nv"
+        "lf mn rg"
+        "ft ft ft";
+    /* задает ширину, 1 rf - использует всю отстальную ширину*/
+    grid-template-columns: 200px 1fr 300px;
+    /* задает высоту */
+    /* grid-template-rows: 100px 100px 100px 100px; */
+    /* grid-template-rows: repeat(4, 100px); */
+    grid-template-rows: 100px 50px 1fr 100px;
+    gap: 10px;
+}
+
+.header {
+    /* уже не нужно задавть вымоты и ширину */
+    /* min-height: 100px; */
+    background-color: aqua;
+    grid-area: hd;
+
+}
+
+.navbar {
+    /* уже не нужно задавть вымоты и ширину */
+    /* min-height: 100px; */
+    background-color: red;
+    grid-area: nv;
+}
+
+.main {
+    /* уже не нужно задавть вымоты и ширину */
+    /* min-height: 100px; */
+    /* width: 500px; */
+    background-color: green;
+    grid-area: mn;
+}
+
+.left {
+    /* уже не нужно задавть вымоты и ширину */
+    /* min-height: 100px; */
+    /* width: 200px; */
+    background-color: yellow;
+    grid-area: lf;
+}
+
+.right {
+    /* уже не нужно задавть вымоты и ширину */
+    /* min-height: 100px; */
+    /* width: 300px; */
+    background-color: blue;
+    grid-area: rg;
+}
+
+.footer {
+    /* уже не нужно задавть вымоты и ширину */
+    /* min-height: 100px; */
+    background-color: orange;
+    grid-area: ft;
+}
+/* отзывчивость при уменьшении экрана */
+@media (max-width: 1200px) {
+    .container {
+            grid-template-areas:
+            "nv hd hd"
+            "nv mn mn"
+            "nv lf rg"
+            "nv ft ft";
+        grid-template-columns: 50px 1fr 1fr;
+        grid-template-rows: 100px 2fr 1fr 100px;
+    }
+}
